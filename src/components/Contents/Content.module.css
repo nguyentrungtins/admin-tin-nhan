@@ -2,5 +2,4 @@
   display: flex;
   min-height: 100vh;
   margin-left: var(--nav-width);
-  background-color: azure;
 }
