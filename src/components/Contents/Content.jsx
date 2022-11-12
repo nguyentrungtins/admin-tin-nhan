@@ -86,9 +86,10 @@ const Content = () => {
       <Table
         columns={columns}
         dataSource={data}
+        style={{ marginTop: "100px" }}
         scroll={{
           x: 1500,
-          y: 300,
+          y: 1000,
         }}
       />
     </div>
