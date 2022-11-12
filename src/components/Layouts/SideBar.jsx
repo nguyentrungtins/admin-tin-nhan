@@ -29,12 +29,18 @@ const SideBar = () => {
     navigate("/login", { replace: true });
   };
   return (
-    <div className="container" id="navbar">
+    <div
+      className="container"
+      id="navbar"
+    >
       <nav className="nav">
         <div>
           <div className="nav_brand">
             <Link to={"/"}>
-              <FiCodesandbox color="#fff" size={30} />
+              <FiCodesandbox
+                color="#fff"
+                size={30}
+              />
             </Link>
           </div>
           <ul>
@@ -51,12 +57,12 @@ const SideBar = () => {
             </li>
             <li>
               <Link
-                to={"/analysis"}
+                to={"/customers"}
                 className="nav_link"
                 onClick={handleClickActive}
               >
                 <TbBrandGoogleAnalytics size={20} />
-                <span className="nav_name">Analysis</span>
+                <span className="nav_name">Khách Hàng</span>
               </Link>
             </li>
             <li>
@@ -72,7 +78,10 @@ const SideBar = () => {
           </ul>
         </div>
 
-        <span className="nav_link logout" onClick={onLogout}>
+        <span
+          className="nav_link logout"
+          onClick={onLogout}
+        >
           <IoIosLogOut size={20} />
         </span>
       </nav>
