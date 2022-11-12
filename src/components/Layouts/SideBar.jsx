@@ -7,6 +7,7 @@ import { IoIosLogOut } from "react-icons/io";
 import { MdOutlineDashboard } from "react-icons/md";
 import { FiCodesandbox } from "react-icons/fi";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
+import { AiFillEdit } from "react-icons/ai";
 const SideBar = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -28,18 +29,12 @@ const SideBar = () => {
     navigate("/login", { replace: true });
   };
   return (
-    <div
-      className="container"
-      id="navbar"
-    >
+    <div className="container" id="navbar">
       <nav className="nav">
         <div>
           <div className="nav_brand">
             <Link to={"/"}>
-              <FiCodesandbox
-                color="#fff"
-                size={30}
-              />
+              <FiCodesandbox color="#fff" size={30} />
             </Link>
           </div>
           <ul>
@@ -64,13 +59,20 @@ const SideBar = () => {
                 <span className="nav_name">Analysis</span>
               </Link>
             </li>
+            <li>
+              <Link
+                to={"/orders"}
+                className="nav_link"
+                onClick={handleClickActive}
+              >
+                <AiFillEdit size={20} />
+                <span className="nav_name">Orders</span>
+              </Link>
+            </li>
           </ul>
         </div>
 
-        <span
-          className="nav_link logout"
-          onClick={onLogout}
-        >
+        <span className="nav_link logout" onClick={onLogout}>
           <IoIosLogOut size={20} />
         </span>
       </nav>
