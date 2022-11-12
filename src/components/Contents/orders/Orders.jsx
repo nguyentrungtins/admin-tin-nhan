@@ -109,7 +109,7 @@ const Orders = () => {
     totalPrice: "1.000.000 VNĐ",
   });
   return (
-    <div style={{ marginLeft: "180px" }}>
+    <div className="ml-[180px] p-4">
       <Table
         columns={columns}
         expandable={{

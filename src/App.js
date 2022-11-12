@@ -6,32 +6,20 @@ import Chart from "./components/Contents/Chart";
 import SideBar from "./components/Layouts/SideBar";
 import Orders from "./components/Contents/orders/Orders";
 import Customers from "./components/Contents/Customers";
+import Promotion from "./components/Contents/Promotion/Promotion";
+
 function App() {
   return (
     <>
       <Router>
         <SideBar></SideBar>
         <Routes>
-          <Route
-            path="/"
-            element={<Chart />}
-          />
-          <Route
-            path="/login"
-            element={<Login />}
-          />
-          <Route
-            path="/register"
-            element={<Register />}
-          />
-          <Route
-            path="/customers"
-            element={<Customers />}
-          />
-          <Route
-            path="/orders"
-            element={<Orders />}
-          />
+          <Route path="/" element={<Chart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/customers" element={<Customers />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/promotions" element={<Promotion />} />
         </Routes>
       </Router>
     </>
