@@ -71,11 +71,11 @@ for (let i = 0; i < 100; i++) {
 }
 const Customer = () => {
   return (
-    <div className="min-h-screen ml-[180px] px-4 pt-8">
-      <h1 className="text-[25px] font-bold pl-2 text-gray-700">
+    <div className="min-h-screen ml-[180px] p-10">
+      <h1 className="text-[35px] font-bold text-gray-700 mb-0">
         Quản Lý Khách Hàng
       </h1>
-      <div className="flex  mt-10">
+      <div className="flex  mt-8">
         <Table
           columns={columns}
           dataSource={data}
