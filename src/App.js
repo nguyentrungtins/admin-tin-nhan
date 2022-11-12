@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 import Login from "./components/Auths/Login";
 import Register from "./components/Auths/Register";
 import Spinner from "./components/Layouts/Spinner";
@@ -12,10 +11,22 @@ function App() {
       <Router>
         <SideBar></SideBar>
         <Routes>
-          <Route path="/" element={<Layout />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/analysis" element={<Chart />} />
+          <Route
+            path="/"
+            element={<Layout />}
+          />
+          <Route
+            path="/login"
+            element={<Login />}
+          />
+          <Route
+            path="/register"
+            element={<Register />}
+          />
+          <Route
+            path="/analysis"
+            element={<Chart />}
+          />
         </Routes>
       </Router>
     </>

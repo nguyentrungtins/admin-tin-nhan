@@ -12,7 +12,7 @@ const data = {
       label: "This Week",
       backgroundColor: "#3f52bb",
       borderColor: "#4f63d7",
-      data: [0, 10, 5, 2, 20, 30, 45],
+      data: [0, 10, 5, 20, 20, 90],
       pointStyle: "circle",
       pointRadius: 8,
       pointHoverRadius: 10,
