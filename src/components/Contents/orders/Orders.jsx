@@ -14,10 +14,18 @@ const items = [
 const Orders = () => {
   const expandedRowRender = () => {
     const columns = [
+      // img
       {
-        title: "Date",
-        dataIndex: "date",
-        key: "date",
+        title: "Hình sản phẩm",
+        dataIndex: "img",
+        key: "img",
+        render: (text) => (
+          <img
+            width={100}
+            src="https://i0.wp.com/epthinktank.eu/wp-content/uploads/2021/09/EPRS-Briefing-698028-General-product-safety-regulation-FINAL.png?fit=1000%2C666&ssl=1"
+            alt="img"
+          />
+        ),
       },
       {
         title: "Name",
@@ -25,103 +33,83 @@ const Orders = () => {
         key: "name",
       },
       {
-        title: "Status",
-        key: "state",
-        render: () => (
-          <span>
-            <Badge status="success" />
-            Finished
-          </span>
-        ),
+        title: "Giá tiền",
+        dataIndex: "price",
+        key: "price",
       },
       {
-        title: "Upgrade Status",
-        dataIndex: "upgradeNum",
-        key: "upgradeNum",
-      },
-      {
-        title: "Action",
-        dataIndex: "operation",
-        key: "operation",
-        render: () => (
-          <Space size="middle">
-            <a>Pause</a>
-            <a>Stop</a>
-            <Dropdown
-              menu={{
-                items,
-              }}
-            >
-              <a>
-                More <DownOutlined />
-              </a>
-            </Dropdown>
-          </Space>
-        ),
+        title: "Số lượng ",
+        dataIndex: "quantity",
+        key: "quantity",
       },
     ];
     const data = [];
     for (let i = 0; i < 3; ++i) {
       data.push({
         key: i.toString(),
-        date: "2014-12-24 23:12:00",
+        quantity: "10",
         name: "This is production name",
-        upgradeNum: "Upgraded: 56",
+        price: "1.000.000 VNĐ",
       });
     }
     return <Table columns={columns} dataSource={data} pagination={false} />;
   };
   const columns = [
     {
-      title: "Name",
-      dataIndex: "name",
-      key: "name",
+      title: "Mã đơn hàng",
+      dataIndex: "idorder",
+      key: "idorder",
     },
     {
-      title: "Platform",
-      dataIndex: "platform",
-      key: "platform",
-    },
-    {
-      title: "Version",
-      dataIndex: "version",
-      key: "version",
-    },
-    {
-      title: "Upgraded",
-      dataIndex: "upgradeNum",
-      key: "upgradeNum",
-    },
-    {
-      title: "Creator",
-      dataIndex: "creator",
-      key: "creator",
-    },
-    {
-      title: "Date",
+      title: "Ngày đặt hàng",
       dataIndex: "createdAt",
       key: "createdAt",
     },
     {
+      title: "Email",
+      dataIndex: "email",
+      key: "email",
+    },
+    {
+      title: "Trạng thái",
+      dataIndex: "status",
+      key: "status",
+    },
+    {
+      title: "Tổng tiền",
+      dataIndex: "totalPrice",
+      key: "totalPrice",
+    },
+    {
       title: "Action",
       key: "operation",
-      render: () => <a>Publish</a>,
+      render: () => (
+        <Space size="middle">
+          <Dropdown
+            menu={{
+              items,
+            }}
+          >
+            <a>
+              More <DownOutlined />
+            </a>
+          </Dropdown>
+        </Space>
+      ),
     },
   ];
   const data = [];
-  for (let i = 0; i < 3; ++i) {
-    data.push({
-      key: i.toString(),
-      name: "Screem",
-      platform: "iOS",
-      version: "10.3.4.5654",
-      upgradeNum: 500,
-      creator: "Jack",
-      createdAt: "2014-12-24 23:12:00",
-    });
-  }
+
+  data.push({
+    key: 1,
+    idorder: "Đơn hàng 1",
+    createdAt: "2014-12-24 23:12:00",
+    email: "nhanle.lx@gmail.com",
+    status: "ok",
+    totalPrice: "1.000.000 VNĐ",
+  });
   return (
-    <>
+    <div style={{ marginLeft: "180px" }}>
       <Table
         columns={columns}
         expandable={{
@@ -130,25 +118,7 @@ const Orders = () => {
         }}
         dataSource={data}
       />
-      <Table
-        columns={columns}
-        expandable={{
-          expandedRowRender,
-          defaultExpandedRowKeys: ["0"],
-        }}
-        dataSource={data}
-        size="middle"
-      />
-      <Table
-        columns={columns}
-        expandable={{
-          expandedRowRender,
-          defaultExpandedRowKeys: ["0"],
-        }}
-        dataSource={data}
-        size="small"
-      />
-    </>
+    </div>
   );
 };
 export default Orders;
