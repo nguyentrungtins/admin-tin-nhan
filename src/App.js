@@ -2,19 +2,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Auths/Login";
 import Register from "./components/Auths/Register";
 import Spinner from "./components/Layouts/Spinner";
-import Chart from "./components/Contents/Chart";
 import SideBar from "./components/Layouts/SideBar";
 import Orders from "./components/Contents/orders/Orders";
 import Customers from "./components/Contents/Customers";
 import Promotion from "./components/Contents/Promotion/Promotion";
 
+import Dashboard from "./components/Contents/Dashboard";
 function App() {
   return (
     <>
       <Router>
         <SideBar></SideBar>
         <Routes>
-          <Route path="/" element={<Chart />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/customers" element={<Customers />} />
